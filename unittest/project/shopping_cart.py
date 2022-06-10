@@ -1,3 +1,4 @@
+from typing import List
 from product import Product
 
 
@@ -13,3 +14,11 @@ class ShoppingCart:
 
     def add_product(self, product) -> None:
         self.__products.append(product)
+
+    # Convert method to attribute
+    @property
+    def products(self) -> List[Product]:
+        return self.__products.copy()
+
+    def remove_product(self, product: Product) -> None:
+        self.__products.remove(product)
