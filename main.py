@@ -9,7 +9,8 @@ class User:
             username (str): El username del usuario.
             password (str): El password del usuario.
         """
-        pass
+        self.username = username
+        self.password = password
 
 
 def palindromo(sentence: str) -> bool:
@@ -20,18 +21,6 @@ def palindromo(sentence: str) -> bool:
 
     Returns:
         bool: True o False.
-
-    Examples:
-
-    >>> palindromo('Anita lava la tina')
-    True
-    
-    >>> palindromo('CodigoFacilito')
-    False
-    
-    >>> sentence = 'Oso'
-    >>> palindromo(sentence)
-    True
     """
     sentence = sentence.lower().replace(' ', '')
     return sentence == sentence[::-1]

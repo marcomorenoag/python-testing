@@ -1,0 +1,25 @@
+"""
+Se debe ejecutar dentro del shell interactivo de Python
+python -m doctest test_main.txt -v
+"""
+
+>>> from main import palindromo, User
+>>> palindromo('Anita lava la tina')
+True
+
+>>> palindromo('CodigoFacilito')
+False
+
+>>> sentence = 'Oso'
+>>> palindromo(sentence)
+True
+
+>>> username = 'Eduardo'
+>>> password = 'password123'
+>>> user = User(username, password)
+
+>>> user.username == username
+True
+
+>>> user.password == password
+True
