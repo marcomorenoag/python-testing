@@ -2,6 +2,22 @@ import pytest
 from app import Task, DueDateError
 from datetime import datetime, timedelta
 
+@pytest.fixture
+def username():
+    return 'Cody'
+
+@pytest.fixture
+def password():
+    return 'password'
+
+def test_username(username):
+    assert username == 'Cody'
+
+def test_username_and_password(username, password):
+    assert username == 'Cody'
+    assert password == 'password'
+
+
 def is_available_to_skip():
     return True
 # To run marked tests: pytest app/test/test_task.py -v -m due_date
