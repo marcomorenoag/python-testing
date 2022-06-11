@@ -2,6 +2,8 @@ import pytest
 from app import Task, DueDateError
 from datetime import datetime, timedelta
 
+def is_available_to_skip():
+    return True
 # To run marked tests: pytest app/test/test_task.py -v -m due_date
 class TestTask():
     
@@ -30,3 +32,8 @@ class TestTask():
         due_date = datetime.now() + timedelta(days=1)
         task = Task('Title2', 'Description2', 'marco2', due_date=due_date)
         assert task.due_date > datetime.now()
+
+    # @pytest.mark.skip(reason='Lo sentimos, la prueba no cumple con los requerimientos')
+    @pytest.mark.skipif(is_available_to_skip(), reason='Lo sentimos, la prueba no cumple con los requerimientos')
+    def test_skip(self):
+        pass
