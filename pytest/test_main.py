@@ -2,6 +2,7 @@
 # Ejecutar pruebas de una clase puntual: pytest -v test_main.py::TestExample
 # Ejecutar prueba puntutal: pytest -v test_main.py::TestExample::test_resta_dos_numeros
 class TestExample():
+    
     @classmethod
     def setup_class(cls):
         print(">>> setup class se ejecuta antes de todas las pruebas")
