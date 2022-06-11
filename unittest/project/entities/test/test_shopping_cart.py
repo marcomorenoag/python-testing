@@ -1,12 +1,13 @@
 import unittest
-from product import Product, ProductDiscountError
-from shopping_cart import ShoppingCart
+from entities.product import Product, ProductDiscountError
+from entities.shopping_cart import ShoppingCart
 
 def is_available_to_skip():
     return False
 
 def is_connected():
     return False
+
 class TestShoppingCart(unittest.TestCase):
 
     @classmethod
@@ -33,21 +34,6 @@ class TestShoppingCart(unittest.TestCase):
     def tearDown(self) -> None:
         # print("El metodo tearDown se ejecuta despues de cada una de las pruebas")
         pass
-
-    def test_product_object(self):
-        name = 'Manzana'
-        price = 1.70
-
-        product = Product(name, price)
-
-        self.assertEqual(product.name, name)
-        self.assertEqual(product.price, price, 'Lo sentimos el precio no es el mismo')
-
-    def test_product_name(self):
-        self.assertEqual(self.smartphone.name, self.name)
-    
-    def test_product_price(self):
-        self.assertEqual(self.smartphone.price, self.price)
 
     def test_shopping_cart_empty(self):
         self.assertTrue(self.shopping_cart_1.empty(), 'Carrito de compras no está vacío')
@@ -92,5 +78,10 @@ class TestShoppingCart(unittest.TestCase):
     def test_skip_example_two(self):
         pass
 
+    def test_code_product(self):
+        self.assertRegex(self.smartphone.code, self.name, 'El codigo no cumple con la expresión')
+
 if __name__ == '__main__':
+    # To excecute the tests from the shell command like: python -m unittest -v entities.test.test_shopping_cart.TestShoppingCart.test_discount_error
+    # To excecute all the testings we use the next commnad from the package: python -m unittest discover
     unittest.main()
