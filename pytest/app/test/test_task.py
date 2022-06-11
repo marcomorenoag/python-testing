@@ -4,7 +4,9 @@ from datetime import datetime, timedelta
 
 @pytest.fixture
 def username():
-    return 'Cody'
+    print(">>> Antes de la prueba")
+    yield 'Cody'
+    print(">>> Después de la prueba")
 
 @pytest.fixture
 def password():
