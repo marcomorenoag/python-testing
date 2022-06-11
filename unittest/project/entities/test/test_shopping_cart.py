@@ -2,11 +2,8 @@ import unittest
 from entities.product import Product, ProductDiscountError
 from entities.shopping_cart import ShoppingCart
 
-def is_available_to_skip():
-    return False
-
-def is_connected():
-    return False
+# def is_connected():
+#     return False
 
 class TestShoppingCart(unittest.TestCase):
 
@@ -67,21 +64,21 @@ class TestShoppingCart(unittest.TestCase):
     def test_total_empty_shopping_cart(self):
         self.assertEqual(self.shopping_cart_1.total, 0)
 
-    @unittest.skip('No cumple con los requerimientos necesarios')
-    def test_skip_example(self):
-        self.assertEqual(1, 1)
+    # @unittest.skip('No cumple con los requerimientos necesarios')
+    # def test_skip_example(self):
+    #     self.assertEqual(1, 1)
 
-    # skipIf => evalua sobre verdadero
-    # skipUnless => evalua sobre falso (si es falso se salta la prueba)
-    # @unittest.skipIf(is_available_to_skip(), 'No se cuenta con todos los requerimientos')
-    @unittest.skipUnless(is_connected(), 'No se cuenta con todos los requerimientos')
-    def test_skip_example_two(self):
-        pass
+    # # skipIf => evalua sobre verdadero
+    # # skipUnless => evalua sobre falso (si es falso se salta la prueba)
+    # # @unittest.skipIf(is_available_to_skip(), 'No se cuenta con todos los requerimientos')
+    # @unittest.skipUnless(is_connected(), 'No se cuenta con todos los requerimientos')
+    # def test_skip_example_two(self):
+    #     pass
 
     def test_code_product(self):
         self.assertRegex(self.smartphone.code, self.name, 'El codigo no cumple con la expresión')
 
-if __name__ == '__main__':
-    # To excecute the tests from the shell command like: python -m unittest -v entities.test.test_shopping_cart.TestShoppingCart.test_discount_error
-    # To excecute all the testings we use the next commnad from the package: python -m unittest discover
-    unittest.main()
+# if __name__ == '__main__':
+#     # To excecute the tests from the shell command like: python -m unittest -v entities.test.test_shopping_cart.TestShoppingCart.test_discount_error
+#     # To excecute all the testings we use the next commnad from the package: python -m unittest discover
+#     unittest.main()

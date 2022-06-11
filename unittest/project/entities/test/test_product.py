@@ -23,7 +23,3 @@ class TestProduct(unittest.TestCase):
     
     def test_product_price(self):
         self.assertEqual(self.smartphone.price, self.price)
-
-
-if __name__ == '__main__':
-    unittest.main()
