@@ -8,8 +8,11 @@ import logging
 
 # To change the default behavior to print messages on terminal
 # By default only shows on terminal from WARNING (30)
-# logging.basicConfig(level=10)
-logging.basicConfig(level=logging.DEBUG)
+# logging.basicConfig(level=20)
+logging.basicConfig(level=logging.INFO,
+    format="%(threadName)s - %(processName)s - %(levelname)s - %(asctime)s - Message: %(message)s",
+    datefmt="%Y/%m/%d"
+)
 
 def suma(numero1: int, numero2: int) -> int:
     """Permite sumar 2 números enteros.
