@@ -9,9 +9,12 @@ import logging
 # To change the default behavior to print messages on terminal
 # By default only shows on terminal from WARNING (30)
 # logging.basicConfig(level=20)
-logging.basicConfig(level=logging.INFO,
+logging.basicConfig(
+    level=logging.INFO,
     format="%(threadName)s - %(processName)s - %(levelname)s - %(asctime)s - Message: %(message)s",
-    datefmt="%Y/%m/%d"
+    datefmt="%Y/%m/%d",
+    filename="codigofacilito.log",
+    filemode="a", # new messages are "append" at the end
 )
 
 def suma(numero1: int, numero2: int) -> int:
